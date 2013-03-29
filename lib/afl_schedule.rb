@@ -1,5 +1,7 @@
-require "afl_schedule/version"
+require 'afl/version'
+require 'afl/schedule'
+require 'afl/season'
 
-module AflSchedule
+module AFL
   # Your code goes here...
 end
