@@ -1,6 +1,6 @@
 # AflSchedule
 
-TODO: Write a gem description
+Simple gem to facilitate using the AFL fixture data in apps
 
 ## Installation
 
@@ -18,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'afl_schedule'
+
+    AFL::Schedule.new.next_match('Essendon')
+    => #<OpenStruct home_team="Essendon ", away_team="Melbourne", venue="MCG", time=2013-06-04 19:40:00 +1000>
 
 ## Contributing
 
