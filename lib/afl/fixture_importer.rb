@@ -53,11 +53,11 @@ module AFL
     end
 
     def home_team(match_data)
-      match_data[:subject].split.first
+      match_data[:subject].slice(0..(match_data[:subject].index(' v ')))
     end
 
     def away_team(match_data)
-      match_data[:subject].split[2]
+      match_data[:subject].slice((match_data[:subject].index(' v ') + 3)..(match_data[:subject].index('(AFL') - 2))
     end
 
     def venue(match_data)
