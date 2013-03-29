@@ -49,7 +49,8 @@ module AFL
       OpenStruct.new(:home_team => home_team(match_data),
                      :away_team => away_team(match_data),
                      :venue =>  venue(match_data),
-                     :time => time(match_data))
+                     :time => time(match_data),
+                     :round => round(match_data) )
     end
 
     def home_team(match_data)
@@ -68,7 +69,9 @@ module AFL
       Chronic.parse("#{match_data[:start_date]} #{match_data[:start_time]}" )
     end
 
-
+    def round(match_data)
+      match_data[:subject].slice((match_data[:subject].index('Rd ') + 3)..(match_data[:subject].index(')') - 1))
+    end
 
   end
 
