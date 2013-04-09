@@ -38,7 +38,7 @@ module AFL
     end
 
     def filename
-      filenames.detect { |filename| filename.match(@team_name)}
+      filenames.detect { |filename| filename.match(/\A#{@team_name.gsub(' ', '_')}/)}
     end
 
     def filenames
@@ -54,7 +54,7 @@ module AFL
     end
 
     def home_team(match_data)
-      match_data[:subject].slice(0..(match_data[:subject].index(' v ')))
+      match_data[:subject].slice(0..(match_data[:subject].index(' v ') - 1))
     end
 
     def away_team(match_data)
@@ -71,6 +71,10 @@ module AFL
 
     def round(match_data)
       match_data[:subject].slice((match_data[:subject].index('Rd ') + 3)..(match_data[:subject].index(')') - 1))
+    end
+
+    def extracted_team_name(filename)
+      filename.gsub('_', ' ')
     end
 
   end
