@@ -1,3 +1,7 @@
+# Note
+
+THis gem has not been updated for the 2014 season. Feel free to send a pull request if you want :-)
+
 # AflSchedule
 
 Simple gem to facilitate using the AFL fixture data in apps
